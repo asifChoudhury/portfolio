@@ -21,6 +21,7 @@
     "grunt-mkdir": "^1.0.0",
     "grunt-pagespeed": "^2.0.0",
     "grunt-responsive-images": "^0.1.7",
+    "grunt-svg-modify": "0.0.7",
     "grunt-svgmin": "^3.2.0"
   },
   "dependencies": {}

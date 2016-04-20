@@ -5,72 +5,158 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Portfolio</title>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet'>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <script src="bootstrap/js/jquery-2.2.3.js"></script>
-        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/jquery-2.2.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/picturefill.min.js"></script>
     </head>
     <body>
         <div class="container">
-            <div class="row header">
-                <div class="col-md-4 header-logo">
-                    <img class="img-responsive" src="images_src/fixed/udacity-logo.jpg">
+            <header class="row header">
+                <div class="col-md-2 header-logo">
+                    <img class="img-responsive udacity-logo" src="images/udacity-logo.min.svg">
                 </div>
-                <div class="col-md-8 text-uppercase text-right header-text">
+                <div class="col-md-10 text-uppercase text-right header-text">
                     <h1 class="name">MD Asif Choudhury</h1>
-                    <h4 class="title">Front-end Developer</h3>
+                    <h4 class="title">Front-end Developer</h4>
                 </div>
-            </div>
-            <div class="row">
+            </header>
+            <section class="row">
                 <div class="col-md-12">
                     <hr>
                 </div>
-            </div>
-            <div class="row">
+            </section>
+            <section class="row">
                 <div class="col-md-12">
                     <picture>
-                        <source class="center-block" media="(min-width: 960px)" srcset="images/image-middle-1600_large_2x.png 2x, images/image-middle-800_large_1x.png 1x">
-                        <source class="center-block"  media="(min-width: 600px)" srcset="images/image-middle-640_medium.png">
-                        <img class="img-responsive center-block" src="images/image-middle-640_medium.png">
+                        <source class="img-responsive center-block" srcset="images/image-middle-1600_xlarge.jpg 650w" >
+                        <img class="img-responsive center-block" src="images/image-middle-640_medium.jpg">
                     </picture>
                 </div>
-            </div>
-            <div class="row">
+            </section>
+            <section class="row">
                 <div class="col-md-12">
                     <h2 class="projects-header">Featured Work</h2>
                 </div>
-            </div>
+            </section>
             <div class="row text-center projects-section">
                 <div class="col-md-4 project1">
                     <picture>
-                        <!-- <source media="(min-width: 960px)" srcset="">
-                        <source media="(min-width: 600px)" srcset="">
-                        <source media="(min-width: 400px)" srcset=""> -->
-                        <img class="img-responsive" src="images/svg/timer-logo.min.svg">
+                        <img class="img-responsive center-block" src="images_src_copy/svg/timer-logo.svg" data-toggle="modal" data-target="#first-project">
                     </picture>
                     <h2 class="project-title text-uppercase">Timer App</h2>
                     <a class="project-link" href="https://github.com/bdl365/TimerApp.git">Link</a>
                 </div>
                 <div class="col-md-4 project2">
                     <picture>
-                        <!-- <source media="(min-width: 960px)" srcset="">
-                        <source media="(min-width: 600px)" srcset="">
-                        <source media="(min-width: 400px)" srcset=""> -->
-                        <img class="img-responsive" src="images/svg/tipCalculator-logo.min.svg">
+                        <img class="img-responsive center-block" src="images_src_copy/svg/tipCalculator-logo.svg" data-toggle="modal" data-target="#second-project">
                     </picture>
                     <h2 class="project-title text-uppercase">Tip Calculator</h2>
                     <a class="project-link" href="https://github.com/bdl365/Tip-Calculator.git">Link</a>
                 </div>
                 <div class="col-md-4 project3">
                     <picture>
-                        <!-- <source media="(min-width: 960px)" srcset="">
-                        <source media="(min-width: 600px)" srcset="">
-                        <source media="(min-width: 400px)" srcset=""> -->
-                        <img class="img-responsive" src="images/svg/animalTradingCards-logo.min.svg">
+                        <img class="img-responsive center-block" src="images_src_copy/svg/animalTradingCards-logo.svg" data-toggle="modal" data-target="#third-project">
                     </picture>
                     <h2 class="project-title text-uppercase">Animal Trading Cards</h2>
                     <a class="project-link" href="https://github.com/bdl365/AnimalTradingCards.git">Link</a>
+                </div>
+                <!-- <div class="col-md-4 project1">
+                    <picture>
+                        <source class="img-responsive center-block" srcset="images/stopwatch-290x290_xsmall.png 959w">
+                        <img class="img-responsive center-block" src="images/stopwatch-220x220_xxsmall.jpg" data-toggle="modal" data-target="#first-project">
+                    </picture>
+                    <h2 class="project-title text-uppercase">Timer App</h2>
+                    <a class="project-link" href="https://github.com/bdl365/TimerApp.git">Link</a>
+                </div>
+                <div class="col-md-4 project2">
+                    <picture>
+                        <source class="img-responsive center-block" srcset="images/tipCalculator-290x290_xsmall.png 959w">
+                        <img class="img-responsive center-block" src="images/tipCalculator-220x220_xxsmall.png" data-toggle="modal" data-target="#second-project">
+                    </picture>
+                    <h2 class="project-title text-uppercase">Tip Calculator</h2>
+                    <a class="project-link" href="https://github.com/bdl365/Tip-Calculator.git">Link</a>
+                </div>
+                <div class="col-md-4 project3">
+                    <picture>
+                        <source class="img-responsive center-block" srcset="images/animalTradingCards-290x290_xsmall.png 959w">
+                        <img class="img-responsive center-block" src="images/animalTradingCards-220x220_xxsmall.png" data-toggle="modal" data-target="#third-project">
+                    </picture>
+                    <h2 class="project-title text-uppercase">Animal Trading Cards</h2>
+                    <a class="project-link" href="https://github.com/bdl365/AnimalTradingCards.git">Link</a>
+                </div> -->
+            </div>
+            <footer>
+                <div class="section-footer">
+                    <div class="row">
+                    <div class="col-md-12 hor-rule">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row text-center social">
+                    <div class="col-md-4 twitter">
+                        <a href="http://www.twitter.com" class="zocial-twitter"></a>
+                    </div>
+                    <div class="col-md-4 linkedin">
+                        <a href="https://www.linkedin.com/in/asifchoudhury1" class="zocial-linkedin"></a>
+                    </div>
+                    <div class="col-md-4 github">
+                        <a href="https://www.github.com/bdl365" class="zocial-github"></a>
+                    </div>
+                </div>
+                </div>
+            </footer>
+            <!-- Modal 1 - Timer App -->
+            <div class="modal fade" id="first-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Timer App</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img class="img-responsive center-block" src="images_src_copy/svg/timer-logo.svg" data-toggle="modal" data-target="#first-project">
+                            <p>Some description.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 2 - Tip Calculator App -->
+            <div class="modal fade" id="second-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Tip Calculator</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img class="img-responsive center-block" src="images_src_copy/svg/tipCalculator-logo.svg" data-toggle="modal" data-target="#second-project">
+                            <p>Some Description.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 3 - Animal Trading Cards -->
+            <div class="modal fade" id="third-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Animal Trading Cards</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img class="img-responsive center-block" src="images_src_copy/svg/animalTradingCards-logo.svg" data-toggle="modal" data-target="#third-project">
+                            <p>Some Description.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

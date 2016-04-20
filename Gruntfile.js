@@ -40,12 +40,48 @@ module.exports = function(grunt) {
           dist: {                     // Target
               files: [{               // Dictionary of files
                   expand: true,       // Enable dynamic expansion.
-                  cwd: 'images_src/svg',     // Src matches are relative to this path.
+                  cwd: 'images_src',     // Src matches are relative to this path.
                   src: ['**/*.svg'],  // Actual pattern(s) to match.
-                  dest: 'images/svg/',       // Destination path prefix.
+                  dest: 'images/',       // Destination path prefix.
                   ext: '.min.svg'     // Dest filepaths will have this extension.
                   // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
               }]
+          }
+        },
+
+        // svg_modify: {
+        //   options: {
+        //       // global options
+        //   },
+        //   your_target: {
+        //     cwd: "images_src_copy/", // <--- Folder with sources and results
+        //     src: "test/", // <--- Subfolders will be processed too
+        //     dest: "svg1/", // <--- All processed folders wiil be placed here
+        //     options: {
+        //     // your_target specific options
+        //       "svg": {
+        //         "animalTradingCards-logo": {
+        //           "width": "90"
+        //         },
+        //         "timer-logo": {
+        //           "width": "90"
+        //         },
+        //         "tipCalculator-logo": {
+        //           "width": "90"
+        //         }
+        //       }
+        //     }
+        //   }
+        // },
+
+        imagemin: {
+          dynamic: {
+            files: [{
+              expand: true,
+              cwd: 'images_src/',
+              src: ['**/*.{png,jpg,gif}'],
+              dest: 'images_src/build/'
+            }]
           }
         },
 
@@ -53,6 +89,14 @@ module.exports = function(grunt) {
           myTask: {
             options: {
               sizes: [{
+                width: 220,
+                height: 220,
+                suffix: "_xxsmall"
+              },{
+                width: 290,
+                height: 290,
+                suffix: "_xsmall"
+              },{
                 width: 320,
                 suffix: "_small"
               },{
@@ -60,17 +104,17 @@ module.exports = function(grunt) {
                 suffix: "_medium"
               },{
                 width: 800,
-                suffix: "_large_1x",
+                suffix: "_large",
                 quality: 60
               },{
                 width: 1600,
-                suffix: "_large_2x",
+                suffix: "_xlarge",
                 quality: 60
               }]
             },
             files: [{
               expand: true,
-              cwd: 'images_src/',
+              cwd: 'images_src/build/',
               src: ['**.{jpg,gif,png}'],
               dest: 'images/'
             }]
@@ -81,20 +125,14 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-svgmin');
+    // grunt.loadNpmTasks('grunt-svg-modify');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    // grunt.registerTask('default');
-    // grunt.registerTask('cssmin');
-    // grunt.registerTask('svgmin');
-    // grunt.registerTask('responsive_images');
-    // grunt.registerTask('clean');
-    // grunt.registerTask('mkdir');
-    // grunt.registerTask('imagemin');
-    // grunt.registerTask('pagespeed');
-    grunt.registerTask('default', ['clean', 'mkdir' ,'cssmin', 'svgmin', 'responsive_images']);
+    grunt.registerTask('default', ['clean', 'mkdir' ,'cssmin', 'svgmin', /*'svg_modify',*/ 'imagemin', 'responsive_images']);
 
 };

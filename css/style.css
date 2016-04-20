@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     color: #747704;
@@ -65,8 +72,27 @@ hr {
   margin-right: auto;
 }
 
-/*Media Queries*/
+.social {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.twitter, .linkedin, .github {
+    width: 33.33%;
+}
+
+.section-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.hor-rule {
+    margin: 0;
+}
+
+/*Media Queries*/
 @media screen and (max-width: 359px) {
     .header-logo {
         padding-top: 35px;
@@ -93,7 +119,7 @@ hr {
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 400px) {
+@media screen and (min-width: 360px) {
     .header-text {
         padding-top: 20px;
     }
@@ -115,7 +141,7 @@ hr {
     }
 }
 
-@media screen and (min-width: 400px) and (max-width: 450px) {
+@media screen and (min-width: 400px) {
     .header-text {
         padding-top: 15px;
     }
@@ -137,7 +163,13 @@ hr {
     }
 }
 
-@media screen and (min-width: 451px) and (max-width: 500px) {
+/*@media screen and (min-width: 412px) and (max-width: 450px) {
+    .projects-section {
+        margin-bottom: 90px;
+    }
+}*/
+
+@media screen and (min-width: 451px) {
     .header-text {
         padding-top: 15px;
     }
@@ -159,7 +191,7 @@ hr {
     }
 }
 
-@media screen and (min-width: 501px) and (max-width: 560px) {
+@media screen and (min-width: 501px) {
     .header-text {
         padding-top: 15px;
     }
@@ -181,7 +213,7 @@ hr {
     }
 }
 
-@media screen and (min-width: 561px) and (max-width: 605px) {
+@media screen and (min-width: 561px) {
     .header-text {
         padding-top: 15px;
     }
@@ -206,16 +238,25 @@ hr {
 @media screen and (min-width: 605px) {
     .header-text {
         padding-top: 18px;
+        text-align: right;
+    }
+
+    .udacity-logo {
+        width: 100px;
     }
 }
 
-@media screen and (min-width: 650px) and (max-width: 700px) {
+@media screen and (min-width: 650px) {
     .header-text {
         padding-top: 25px;
     }
+
+    .header-logo {
+        padding-top: 45px;
+    }
 }
 
-@media screen and (min-width: 700px) and (max-width: 959px) {
+@media screen and (min-width: 700px) {
     .header-text {
         padding-top: 30px;
     }
@@ -235,6 +276,12 @@ hr {
     .project-link {
         font-size: 13px;
     }
+
+    .social {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 @media screen and (min-width: 959px) {
@@ -244,13 +291,13 @@ hr {
         margin-right: auto;
     }
 
-    .header-logo {
-        width: 144px;
-    }
-
     .header-text {
         padding-top: 20px;
-        margin-left: 42px;
+        margin-left: 70px;
+    }
+
+    .header-logo {
+        width: 114px;
     }
 
     .name {
