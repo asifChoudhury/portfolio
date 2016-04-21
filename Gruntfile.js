@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         /* Clear out the images and js directory if it exists */
         clean: {
           dev: {
-            src: ['images'],
+            src: ['images', 'images_src/build'],
           },
         },
 
@@ -65,23 +65,8 @@ module.exports = function(grunt) {
           myTask: {
             options: {
               sizes: [{
-                width: 220,
-                height: 220,
-                suffix: "_xxsmall"
-              },{
-                width: 290,
-                height: 290,
-                suffix: "_xsmall"
-              },{
-                width: 320,
-                suffix: "_small"
-              },{
                 width: 640,
                 suffix: "_medium"
-              },{
-                width: 800,
-                suffix: "_large",
-                quality: 60
               },{
                 width: 1600,
                 suffix: "_xlarge",
