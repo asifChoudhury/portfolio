@@ -19,6 +19,7 @@ module.exports = function(grunt) {
             },
           },
         },
+
         cssmin: {
           target: {
             files: [{
