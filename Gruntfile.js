@@ -49,38 +49,13 @@ module.exports = function(grunt) {
           }
         },
 
-        // svg_modify: {
-        //   options: {
-        //       // global options
-        //   },
-        //   your_target: {
-        //     cwd: "images_src_copy/", // <--- Folder with sources and results
-        //     src: "test/", // <--- Subfolders will be processed too
-        //     dest: "svg1/", // <--- All processed folders wiil be placed here
-        //     options: {
-        //     // your_target specific options
-        //       "svg": {
-        //         "animalTradingCards-logo": {
-        //           "width": "90"
-        //         },
-        //         "timer-logo": {
-        //           "width": "90"
-        //         },
-        //         "tipCalculator-logo": {
-        //           "width": "90"
-        //         }
-        //       }
-        //     }
-        //   }
-        // },
-
         imagemin: {
           dynamic: {
             files: [{
               expand: true,
               cwd: 'images_src/',
               src: ['**/*.{png,jpg,gif}'],
-              dest: 'images_src/build/'
+              dest: 'images_src/build'
             }]
           }
         },
@@ -125,7 +100,6 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-svgmin');
-    // grunt.loadNpmTasks('grunt-svg-modify');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -133,6 +107,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['clean', 'mkdir' ,'cssmin', 'svgmin', /*'svg_modify',*/ 'imagemin', 'responsive_images']);
+    grunt.registerTask('default', ['clean', 'mkdir' ,'cssmin', 'svgmin', 'imagemin', 'responsive_images']);
 
 };
